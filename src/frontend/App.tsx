@@ -48,7 +48,7 @@ export function App() {
         setStartTime(st);
         setMetadata(meta);
 
-        document.title = `ns-tracing - ${meta.url || "Recording"}`;
+        document.title = `GN Web Tracing - ${meta.url || "Recording"}`;
 
         const logs: ConsoleLogEntry[] = (data.consoleLogs || [])
           .map((e: ConsoleLogEntry) => ({
@@ -171,7 +171,7 @@ export function App() {
     <div className="flex h-screen flex-col bg-gh-bg text-gh-bright font-mono text-[13px]">
       {/* Header */}
       <header className="flex items-center justify-between px-4 py-2.5 bg-gh-panel border-b border-gh-border">
-        <h1 className="text-[15px] font-semibold text-white">ns-tracing</h1>
+        <h1 className="text-[15px] font-semibold text-white">GN Web Tracing</h1>
         <div className="flex gap-4 text-xs text-gh-secondary">
           <span>{metadata?.url || ""}</span>
           <span>{formatDuration(metadata?.duration)}</span>

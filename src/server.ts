@@ -31,5 +31,5 @@ app.get("/view/:id", (_req, res) => {
 });
 
 app.listen(PORT, () => {
-  console.log(`ns-tracing-server running at http://localhost:${PORT}`);
+  console.log(`gn-web-tracing-server running at http://localhost:${PORT}`);
 });

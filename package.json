@@ -1,7 +1,7 @@
 {
-  "name": "ns-tracing-server",
+  "name": "gn-web-tracing-server",
   "version": "1.0.0",
-  "description": "Local server for viewing ns-tracing recordings",
+  "description": "Local server for viewing gn-web-tracing recordings",
   "main": "dist/server.js",
   "scripts": {
     "build": "tsc && node esbuild.frontend.mjs && npx tailwindcss -i src/frontend/app.css -o public/css/viewer.css --minify",
