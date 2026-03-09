@@ -21,9 +21,9 @@ A local server for storing and viewing recordings captured by the [GN Web Tracin
 │  ┌──────────────────────────────────────────────────────┐   │
 │  │  Express.js Backend (TypeScript)                      │   │
 │  │                                                       │   │
-│  │  POST /api/recordings         → Upload recording      │   │
-│  │  GET  /api/recordings/:id     → Metadata + logs JSON  │   │
-│  │  GET  /api/recordings/:id/video → Stream WebM video   │   │
+│  │  POST /recordings         → Upload recording      │   │
+│  │  GET  /recordings/:id     → Metadata + logs JSON  │   │
+│  │  GET  /recordings/:id/video → Stream WebM video   │   │
 │  │  GET  /view/:id               → Viewer SPA            │   │
 │  └──────────────────────────────────────────────────────┘   │
 │                          │                                    │
@@ -52,9 +52,9 @@ A local server for storing and viewing recordings captured by the [GN Web Tracin
 src/
 ├── server.ts                       # Express app: CORS, static files, route mounting
 ├── routes/
-│   ├── upload.ts                   # POST /api/recordings — multipart upload (multer)
-│   ├── recordings.ts               # GET /api/recordings/:id — metadata + logs
-│   └── video.ts                    # GET /api/recordings/:id/video — video streaming
+│   ├── upload.ts                   # POST /recordings — multipart upload (multer)
+│   ├── recordings.ts               # GET /recordings/:id — metadata + logs
+│   └── video.ts                    # GET /recordings/:id/video — video streaming
 ├── storage/
 │   └── disk-store.ts               # File-based storage under data/{hex-id}/
 └── frontend/
@@ -107,7 +107,7 @@ npm run typecheck     # Type check both backend and frontend
 ### Upload Recording
 
 ```
-POST /api/recordings
+POST /recordings
 Content-Type: multipart/form-data
 ```
 
@@ -131,7 +131,7 @@ Content-Type: multipart/form-data
 ### Get Recording
 
 ```
-GET /api/recordings/:id
+GET /recordings/:id
 ```
 
 **Response (200):**
@@ -148,7 +148,7 @@ GET /api/recordings/:id
 ### Stream Video
 
 ```
-GET /api/recordings/:id/video
+GET /recordings/:id/video
 ```
 
 Returns the WebM video file. Supports Range requests for seeking.

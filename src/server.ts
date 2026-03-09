@@ -14,16 +14,16 @@ app.use(
     origin: (_origin, callback) => {
       callback(null, true); // Allow all for MVP
     },
-  })
+  }),
 );
 
 // Static files
 app.use(express.static(path.join(__dirname, "..", "public")));
 
 // API routes
-app.use("/api/recordings", uploadRouter);
-app.use("/api/recordings", recordingsRouter);
-app.use("/api/recordings", videoRouter);
+app.use("/recordings", uploadRouter);
+app.use("/recordings", recordingsRouter);
+app.use("/recordings", videoRouter);
 
 // Viewer route - serve viewer.html for /view/:id
 app.get("/view/:id", (_req, res) => {
